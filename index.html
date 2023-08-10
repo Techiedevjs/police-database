@@ -1,0 +1,1916 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="images/logo.svg"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>PCPD - Dashboard</title>
+</head>
+<body id="dashboardbody hide">
+    <figure class="outline">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </figure>
+    <div class="megacontainer">
+        <section class="container hide">
+            <header>
+                <section class="logo-container">
+                    <img src="images/logo.svg" alt="logo" class="logo">
+                    <div class="logo-text"> 
+                        <p>Parallel City <br> <span class="grey">POLICE DEPARTMENT</span></p>     
+                    </div>
+                </section>
+
+                <section class="duty-container">
+                    <p class="onduty duty">ON DUTY</p>
+                    <div class="loggedofficer uppercase"> <span class="officername"></span>  <p class="dot"></p> <span class="grey officerrank"></span>  </div>
+                    <div class="icon-cont">
+                        <div class="headericon headersetting pointer"><img src="images/settingheader.svg" alt="checkmark" class="icons"></div>
+                        <div class="headericon headercancel pointer"><img src="images/cancelheader.svg" alt="close" class="icons"></div>
+                        <div class="headericon headercheck pointer approve hiddenicon"> <img src="images/checkmark.svg" alt="check"> </div>
+                    </div>
+                </section>
+            </header>
+            
+            <div class="main-container">
+                <aside>
+                    <div class="side-menu dashboard side-menu-active" id="dashboard" href="/">
+                        <div class="sidebarimage"><img src="images/dashboardtabactive.svg" alt="dashboard" class="dashboardtabimage"></div>
+                        <p class="bold">DASHBOARD <br> <span class="small">DASHBOARD</span> </p>
+                    </div>
+                    <div class="side-menu" id="incidents">
+                        <div class="sidebarimage" ><img src="images/incidentstab.svg" alt="incidents" class="incidentstabimage"></div>
+                        <p class="bold">INCIDENTS <br> <span class="small">INCIDENTS</span> </p>
+                    </div>
+                    <div class="side-menu" id="profiles">
+                        <div class="sidebarimage" ><img src="images/profilestab.svg" alt="profiles" class="profilestabimage"></div>
+                        <p class="bold">PROFILES <br> <span class="small">PROFILES</span> </p>
+                    </div>
+                    <div class="side-menu" id="vehicles">
+                        <div class="sidebarimage" ><img src="images/vehiclestab.svg" alt="vehiicles tab" class="vehiclestabimage"></div>
+                        <p class="bold">VEHICLES <br> <span class="small">VEHICLES</span> </p>
+                    </div>
+                    <div class="side-menu" id="reports">
+                        <div class="sidebarimage" ><img src="images/reportstab.svg" alt="reports tab" class="reportstabimage"></div>
+                        <p class="bold">REPORTS <br> <span class="small">REPORTS</span> </p>
+                    </div>
+                    <div class="side-menu last-side-menu"  id="misc">
+                        <div class="sidebarimage" ><img src="images/misctab.svg" alt="misc tab" class="misctabimage"></div>
+                        <p class="bold">MISC <br> <span class="small">MISC</span> </p>
+                    </div>
+                </aside>
+
+                <main id="main">
+                    <!-- DASHBOARD CONTENT -->
+                    <section class="dashboardcontent ">
+                    <section class="minidashboardcontent">
+                        <section class="warrants-container">
+                            <div class="header">
+                                <section class="header-text">
+                                    <img src="images/warrants.svg" alt="warrants icon">
+                                    <div > 
+                                        <p class="bold">WARRANTS <br> <span class="small">WARRANTS</span></p>     
+                                    </div>
+                                </section>
+                    
+                                <section class="search-input">
+                                    <img src="images/search.svg" alt="search">
+                                    <input type="text" name="search" id="warrantsearch" placeholder="Search">
+                                </section>
+                            </div>
+
+                            <section class="warrants">
+                                
+                            </section>
+            
+                        </section>
+            
+                        <section class="order-container">
+                            <div class="header">
+                                <section class="header-text">
+                                    <img src="images/orderaccount.svg" alt="order icon">
+                                    <div > 
+                                        <p class="bold">ORDERS <br> <span class="small">ORDERS</span></p>     
+                                    </div>
+                                </section>
+                    
+                                <section class="search-input">
+                                    <img src="images/search.svg" alt="search">
+                                    <input type="text" name="search" id="ordersearch" placeholder="Search">
+                                </section>
+                            </div>
+            
+                            <section class="orders">
+                                
+                            </section>
+                        </section>
+                    </section>
+                    </section>
+
+                    <!-- INCIDENTS CONTENT -->
+                    <section class="incidentscontent hidden">
+                        <section class="incidentscont">
+                        <div class="subsection">
+                            <div class="header">
+                                <section class="header-text">
+                                    <img src="images/incidents.svg" alt="incident icon">
+                                    <div > 
+                                        <p class="bold">INCIDENTS <br> <span class="small">INCIDENTS</span></p>     
+                                    </div>
+                                </section>
+                                <div class="incidents-search-add">
+                                    <section class="search-input incidents-search-input">
+                                        <img src="images/search.svg" alt="search">
+                                        <input type="text" name="search" id="incidentsearch" placeholder="Search">
+                                    </section>
+                                    <div class="addicon pointer incidentadd" onclick="incidentsAdd()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                            <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="incidents-main-container">
+                                <section class="incidents-main incidents-grid">
+                                   
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="subsection newincidentscreen hidden">
+                            <div class="header">
+                                <section class="header-text">
+                                    <div class=" padfirst"><img src="images/Vectoraddincident.svg" alt="incident icon" ></div>
+                                    <div > 
+                                        <p class="bold">NEW INCIDENTS <br> <span class="small">FILL ALL FIELD BELOW</span></p>     
+                                    </div>
+                                </section>
+                                <section class="flexicons">
+                                    <div class="flexsmall fontsmall savenewincident grey" onclick="saveNewIncident()">
+                                        <svg width="16" class="smallsvg" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.25011 12.375H9.75011V15.875H6.25011V12.375Z" fill="white" fill-opacity="0.65"/>
+                                            <path d="M15.105 5.12125L10.8787 0.895C10.3869 0.402576 9.71971 0.125613 9.02375 0.125H6.25V5.375H10.625C10.8571 5.375 11.0796 5.46719 11.2437 5.63128C11.4078 5.79538 11.5 6.01794 11.5 6.25C11.5 6.48206 11.4078 6.70462 11.2437 6.86872C11.0796 7.03281 10.8571 7.125 10.625 7.125H5.375C5.14294 7.125 4.92038 7.03281 4.75628 6.86872C4.59219 6.70462 4.5 6.48206 4.5 6.25V0.125H2.75C2.05381 0.125 1.38613 0.401562 0.893845 0.893845C0.401562 1.38613 0.125 2.05381 0.125 2.75V13.25C0.125 13.9462 0.401562 14.6139 0.893845 15.1062C1.38613 15.5984 2.05381 15.875 2.75 15.875H4.5V12.375C4.5 11.9109 4.68437 11.4658 5.01256 11.1376C5.34075 10.8094 5.78587 10.625 6.25 10.625H9.75C10.2141 10.625 10.6592 10.8094 10.9874 11.1376C11.3156 11.4658 11.5 11.9109 11.5 12.375V15.875H13.25C13.9462 15.875 14.6139 15.5984 15.1062 15.1062C15.5984 14.6139 15.875 13.9462 15.875 13.25V6.97625C15.8744 6.28029 15.5974 5.61306 15.105 5.12125Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>
+                                        SAVE</div>
+                                    <span class="paddedicon pointer" onclick="refreshIncidentForm()"><img src="images/anticlockwise.svg" alt="incident icon"></span>
+                                </section>
+                            </div>
+
+                            <div class="flexnewincident">
+                                <div class="newincident-main-container">
+                                    <section class="newincident-main">
+                                        <div class="incidentinputbox inputone">
+                                            <img src="images/greyedit.svg" alt="edit" class="editabsolute">
+                                            <input type="text" name="title" id="newincidenttitle" placeholder="Title" class="incidentinputtitle">
+                                        </div>
+                                        <div class="incidentinputbox inputtwo">
+                                            <img src="images/greyedit.svg" alt="edit" class="editabsolute">
+                                            <textarea name="" id="newincidentdescription" cols="30" rows="10"  placeholder="Your Description" class="incidenttextarea"></textarea>
+                                        </div>
+                                    </section>
+                                </div>
+    
+                                <div class='hidden addcriminalscreen'>
+                                    <div>
+                                        <section class='addcriminal incidentcriminalheader header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Add Criminal Scum </p> 
+                                                <div class="addicon pointer plusincidentcriminal elementhidden" onclick="showModal('#criminalmodal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer addincidentcriminal" onclick="criminalIncidentSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="incidentcriminals subpicked hidevehicle">
+                                            <section id="addedincidentcriminals" class="additioncont">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal incidentevidenceheader header-text'>
+                                            <div class="flexsmall"> 
+                                                <p>Evidence </p> 
+                                                <div class="addicon pointer plusincidentevidence elementhidden" onclick="showModal('#evidencemodal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer addincidentevidence" onclick="evidenceIncidentSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="incidentevidence subpicked hidevehicle">
+                                            <section id="addedincidentevidences" class="additioncont">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal incidentofficerheader header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Officers Involved </p> 
+                                                <div class="addicon pointer plusincidentofficer elementhidden" onclick="showModal('#officermodal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer addincidentofficer" onclick="officerIncidentSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="incidentofficers subpicked hidevehicle">
+                                            <section id="addedincidentofficers" class="additioncont">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal incidentpersonheader  header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Person Involved </p> 
+                                                <div class="addicon pointer plusincidentperson elementhidden" onclick="showModal('#personmodal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer addincidentperson" onclick="personIncidentSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="incidentpersons subpicked hidevehicle">
+                                            <section id="addedincidentpersons" class="additioncont">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal incidentvehicleheader header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Vehicle Involved </p> 
+                                                <div class="addicon pointer plusincidentvehicle elementhidden" onclick="showModal('#vehiclemodal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer" id="addincidentvehicle" onclick="addIncidentVehicle()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="incidentvehicles subpicked hidevehicle">
+                                            <section id="addedincidentvehicles" class="additioncont">
+                                               
+                                            </section>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- INCIDENTS MODALS -->
+                        <div class="hide modalbody" id="evidencemodal">
+                            <section class="addevidencemodal">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Evidence to Incident </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#evidencemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="flexsmall choosevehiclecont">
+                                        <input type="text" name="evidence" id="selectedevidence" class="capitalize" placeholder="Choose Evidence Type" oninput="searchData('evidence')">
+                                        <div class="evidencedropdownicon addicon pointer" onclick="toggleEvidenceDropDown('evidence')">
+                                            <svg xmlns="http://www.w3.org/2000/svg"  class=" pointer" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                            <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden evidencesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="evidencedropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="evidence-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="evidence-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" id="evidencesave">SAVE</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="hide modalbody" id="personmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Person </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#personmodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="person" id="selectedperson" placeholder="Choose profile" oninput="searchData('person')">
+                                        <div class="addicon pointer persondropdownicon" onclick="toggleDropDown('person')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden personsearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="persondropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="personstatus" id="selectedpersonstatus" placeholder="Choose person status" oninput="searchData('incidentcitizenstatus')">
+                                        <div class="addicon pointer personstatusdropdownicon" onclick="toggleStatusDropDown('personstatus')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden personstatussearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="personstatusdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="person-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="person-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" id="personfind">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="hide modalbody" id="criminalmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Criminal Scum </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#criminalmodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="criminal" id="selectedcriminal" placeholder="Choose profile" oninput="searchData('criminal')">
+                                        <div class="addicon pointer criminaldropdownicon" onclick="toggleDropDown('criminal')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden criminalsearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="criminaldropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="criminal-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="criminal-description" rows="6" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="criminalAdd()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="hide modalbody" id="vehiclemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Vehicle </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#vehiclemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="vehicle" id="selectedvehicle" placeholder="Choose Vehicle" oninput="searchData('vehicle')">
+                                        <div class="addicon pointer vehicledropdownicon" onclick="toggleDropDown('vehicle')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden vehiclesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="vehicledropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="newincident-vehicle-description" id="vehicle-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="vehicleButtonAdd()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="hide modalbody" id="officermodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Officer</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#officermodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="officer" id="selectedofficer" placeholder="Choose profile" oninput="searchData('officer')">
+                                        <div class="addicon pointer officerdropdownicon" onclick="toggleDropDown('officer')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden officersearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="officerdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="officer-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="officerAdd()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                    </section>
+                        <!-- VIEW SINGLE INCIDENT -->
+                        <div class="singleincident hidden">
+                            <div class="header">
+                                <section class="flexsmall">
+                                    <img src="images/incidents.svg" alt="incident icon">
+                                    <div> 
+                                        <p class="bold">Incident #<span class="incidentId"></span></p>     
+                                        <div class="information mb0">
+                                            <span class="small grey incidentInfo"></span> <p class="dot"></p> <span class="small grey subId"></span> 
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="flexsmall incidentbackbox pointer" onclick="viewAllIncidents()">
+                                    <img src="images/arrow-back.svg" class="smallsvg" alt="">
+                                    <p class="incidentback grey">Go back to incidents list</p>
+                                </section>
+                            </div>
+                            <div class="incidentdetailscont">
+                                <section class="first-detail">
+                                    <div class="fontsmaller first-detail-sub">
+                                        <div class="red incident-suspects inactive"> SUSPECTS <span></span></div>
+                                        <div class="blue incident-victims inactive">VICTIMS <span></span></div>
+                                        <div class="green incident-witnesses inactive">EYEWITNESSES <span></span></div>
+                                    </div>
+                                    <div class="first-detail-sub2">
+                                        <div class="incident-citizens-box">
+
+                                        </div>
+                                        <div class="warrant">
+                                            <div class='addsuspect'  onclick="showModal('.citizenmodal')">
+                                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M24.2188 6.25C24.8404 6.25 25.4365 6.49693 25.876 6.93647C26.3156 7.37601 26.5625 7.97215 26.5625 8.59375V21.875H39.8438C40.4654 21.875 41.0615 22.1219 41.501 22.5615C41.9406 23.001 42.1875 23.5971 42.1875 24.2188C42.1875 24.8404 41.9406 25.4365 41.501 25.876C41.0615 26.3156 40.4654 26.5625 39.8438 26.5625H26.5625V39.8438C26.5625 40.4654 26.3156 41.0615 25.876 41.501C25.4365 41.9406 24.8404 42.1875 24.2188 42.1875C23.5971 42.1875 23.001 41.9406 22.5615 41.501C22.1219 41.0615 21.875 40.4654 21.875 39.8438V26.5625H8.59375C7.97215 26.5625 7.37601 26.3156 6.93647 25.876C6.49693 25.4365 6.25 24.8404 6.25 24.2188C6.25 23.5971 6.49693 23.001 6.93647 22.5615C7.37601 22.1219 7.97215 21.875 8.59375 21.875H21.875V8.59375C21.875 7.97215 22.1219 7.37601 22.5615 6.93647C23.001 6.49693 23.5971 6.25 24.2188 6.25Z" fill="white" fill-opacity="0.65"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class='suspectname'>empty</p>
+                                                <div class="information">You can add person from list by click on plus near</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="second-detail">
+                                    <div class="evidences">
+                                        <h4>Evidences</h4>
+                                        <p><span class="evidences-records"></span> records</p>
+                                        <svg viewBox="0 0 144 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M59.8 8.0625C59.8 2.50416 64.2938 -2 69.825 -2H135.975C141.506 -2 146 2.50416 146 8.0625V103.938C146 109.496 141.506 114 135.975 114H88.9086C89.1036 113.131 89.2 112.23 89.2 111.312V56.0605C93.51 54.2281 96.55 49.9365 96.55 44.9375V37.5625C96.55 30.906 91.1672 25.5 84.525 25.5H59.8V8.0625ZM131.929 77.7477C133.742 75.9285 133.742 72.9465 131.929 71.1273L117.229 56.3773C115.414 54.5563 112.436 54.5563 110.621 56.3773L95.9212 71.1273C94.1082 72.9465 94.1082 75.9285 95.9212 77.7477C97.7361 79.5687 100.714 79.5687 102.529 77.7477L109.25 71.0036V96.5625C109.25 99.1397 111.348 101.25 113.925 101.25C116.502 101.25 118.6 99.1397 118.6 96.5625V71.0036L125.321 77.7477C127.136 79.5687 130.114 79.5687 131.929 77.7477ZM1 37.5625C1 36.0835 2.20923 34.875 3.675 34.875H84.525C85.9908 34.875 87.2 36.0835 87.2 37.5625V44.9375C87.2 46.4165 85.9908 47.625 84.525 47.625H3.675C2.20923 47.625 1 46.4165 1 44.9375V37.5625ZM79.85 57V107.625C79.85 111.155 77.01 114 73.5 114H14.7C11.19 114 8.35 111.155 8.35 107.625V57H79.85ZM33.075 69.75C30.4983 69.75 28.4 71.8603 28.4 74.4375C28.4 77.0147 30.4983 79.125 33.075 79.125H55.125C57.7017 79.125 59.8 77.0147 59.8 74.4375C59.8 71.8603 57.7017 69.75 55.125 69.75H33.075Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="vehicles">
+                                        <h4>Vehicles</h4>
+                                        <p><span class="vehicles-records"></span> records</p>
+                                        <svg viewBox="0 0 128 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M106.75 -21.958C87.315 -21.958 71.5417 -6.18467 71.5417 13.2503C71.5417 32.6853 87.315 48.4587 106.75 48.4587C126.185 48.4587 141.958 32.6853 141.958 13.2503C141.958 -6.18467 126.185 -21.958 106.75 -21.958ZM110.271 20.292H103.229V-7.87467H110.271V20.292ZM110.271 27.3337V34.3753H103.229V27.3337H110.271ZM106.116 62.542C106.539 63.6687 106.75 64.8657 106.75 66.0628C106.75 71.9074 102.032 76.6253 96.1875 76.6253C90.3429 76.6253 85.625 71.9074 85.625 66.0628C85.625 63.3166 86.6813 60.852 88.3713 58.9507C76.898 54.3114 67.5778 45.544 62.2467 34.3753H20.9121L28.2354 13.2503H57.4583C57.4583 8.39158 58.1625 3.60324 59.5004 -0.833007H18.0954L1.125 48.4587V111.834H22.25V97.7503H106.75V111.834H127.875V57.7537C120.481 61.3449 112.665 62.6124 106.116 62.542ZM32.8125 76.6253C26.9679 76.6253 22.25 71.9074 22.25 66.0628C22.25 60.2182 26.9679 55.5003 32.8125 55.5003C38.6571 55.5003 43.375 60.2182 43.375 66.0628C43.375 71.9074 38.6571 76.6253 32.8125 76.6253Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="officers">
+                                        <h4>Officers</h4>
+                                        <p><span class="officers-records"></span> records</p>
+                                        <svg viewBox="0 0 141 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M80.5166 113.864L79.9999 113.552L79.4832 113.864L32.5872 142.169L45.0321 88.8227L45.1692 88.2349L44.713 87.8397L3.27942 51.9457L57.8386 47.3169L58.4395 47.266L58.6748 46.7107L79.9999 -3.6044L101.325 46.7107L101.56 47.266L102.161 47.3169L156.72 51.9457L115.287 87.8397L114.831 88.2349L114.968 88.8227L127.413 142.169L80.5166 113.864Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="citizens">
+                                        <h4>Citizens</h4>
+                                        <p><span class="citizens-records"></span> records</p>
+                                        <svg viewBox="0 0 144 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M84.3125 34.0781C84.3125 48.6705 72.483 60.5 57.8906 60.5C43.2982 60.5 31.4688 48.6705 31.4688 34.0781C31.4688 19.4857 43.2982 7.65625 57.8906 7.65625C72.483 7.65625 84.3125 19.4857 84.3125 34.0781Z"/>
+                                            <path d="M57.8906 70.1172C65.9423 70.1172 76.8047 72.0258 86.8905 76.758C80.2935 80.2696 74.8499 84.4833 70.8512 89.0226C65.3864 95.2213 62.2227 102.704 62.2227 110.223V115.344H7.09375V100.348C7.09375 90.5577 15.2986 83.0002 26.0585 77.827C36.7529 72.6853 49.5543 70.1172 57.8906 70.1172Z" />
+                                            <path d="M71.0781 110.25C71.0781 98.6979 80.4947 89.8105 92.7906 83.7479C105.03 77.7132 119.732 74.6875 129.492 74.6875C139.252 74.6875 153.954 77.7132 166.194 83.7479C178.49 89.8105 187.906 98.6979 187.906 110.25V127.531H71.0781V110.25Z"/>
+                                            <path d="M162.008 27.9844C162.008 45.9423 147.45 60.5 129.492 60.5C111.534 60.5 96.9766 45.9423 96.9766 27.9844C96.9766 10.0265 111.534 -4.53125 129.492 -4.53125C147.45 -4.53125 162.008 10.0265 162.008 27.9844Z" />
+                                        </svg>
+                                    </div>
+                                </section>
+
+                                <section class="third-detail">
+                                    <div class="main-information">
+                                        <div class="main-info-header">  
+                                           <h4 class="main-title">Main Information</h4> 
+                                           <p class="pointer backtomaininfo elementhidden" onclick="backToMainInfo()">Back to main info</p>
+                                        </div>
+                                        <article class="main-info">
+                                            <div class="main-info-title-cont">
+                                                <input id="main-info-title" class="main-info-title" name="main-info-title" type="text" placeholder="Title">
+                                                <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" onclick="saveIncidentTitleEdit()">
+                                                    <path class="smalledit" d="M8.65 3.4625L6.525 1.3625L7.225 0.6625C7.41667 0.470833 7.65217 0.375 7.9315 0.375C8.21083 0.375 8.44617 0.470833 8.6375 0.6625L9.3375 1.3625C9.52917 1.55417 9.62917 1.7855 9.6375 2.0565C9.64583 2.3275 9.55417 2.55867 9.3625 2.75L8.65 3.4625ZM7.925 4.2L2.625 9.5H0.5V7.375L5.8 2.075L7.925 4.2Z" />
+                                                </svg>
+                                            </div>
+                                            <div class="main-info-text-cont fontsmall">
+                                                <input id="main-info-text" class="main-info-text" name="main-info-text" type="text" placeholder="Information">
+                                                <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" onclick="saveIncidentInfoEdit()">
+                                                    <path class="smalledit" d="M8.65 3.4625L6.525 1.3625L7.225 0.6625C7.41667 0.470833 7.65217 0.375 7.9315 0.375C8.21083 0.375 8.44617 0.470833 8.6375 0.6625L9.3375 1.3625C9.52917 1.55417 9.62917 1.7855 9.6375 2.0565C9.64583 2.3275 9.55417 2.55867 9.3625 2.75L8.65 3.4625ZM7.925 4.2L2.625 9.5H0.5V7.375L5.8 2.075L7.925 4.2Z" />
+                                                </svg>
+                                            </div>
+                                        </article>
+                                        <article class="detail-records hidden">
+                                            <div class="details">
+
+                                            </div>
+                                            <div class="flexsmall grey pointer addnew">
+                                                <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M24.2188 6.25C24.8404 6.25 25.4365 6.49693 25.876 6.93647C26.3156 7.37601 26.5625 7.97215 26.5625 8.59375V21.875H39.8438C40.4654 21.875 41.0615 22.1219 41.501 22.5615C41.9406 23.001 42.1875 23.5971 42.1875 24.2188C42.1875 24.8404 41.9406 25.4365 41.501 25.876C41.0615 26.3156 40.4654 26.5625 39.8438 26.5625H26.5625V39.8438C26.5625 40.4654 26.3156 41.0615 25.876 41.501C25.4365 41.9406 24.8404 42.1875 24.2188 42.1875C23.5971 42.1875 23.001 41.9406 22.5615 41.501C22.1219 41.0615 21.875 40.4654 21.875 39.8438V26.5625H8.59375C7.97215 26.5625 7.37601 26.3156 6.93647 25.876C6.49693 25.4365 6.25 24.8404 6.25 24.2188C6.25 23.5971 6.49693 23.001 6.93647 22.5615C7.37601 22.1219 7.97215 21.875 8.59375 21.875H21.875V8.59375C21.875 7.97215 22.1219 7.37601 22.5615 6.93647C23.001 6.49693 23.5971 6.25 24.2188 6.25Z" fill="white" fill-opacity="0.65"/>
+                                                </svg>
+                                                Add new
+                                            </div>
+                                        </article>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="flexsmall">
+                                <div class="incident-trash pointer" onclick="checkAccess('#incidentdeletemodal')">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.8334 3.33333H12.9167L12.0834 2.5H7.91675L7.08341 3.33333H4.16675V5H15.8334M5.00008 15.8333C5.00008 16.2754 5.17568 16.6993 5.48824 17.0118C5.8008 17.3244 6.22472 17.5 6.66675 17.5H13.3334C13.7754 17.5 14.1994 17.3244 14.5119 17.0118C14.8245 16.6993 15.0001 16.2754 15.0001 15.8333V5.83333H5.00008V15.8333Z" fill="#F13333" fill-opacity="0.65"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flexsmall last-modified">
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                    <path class="smalledit" d="M8.65 3.4625L6.525 1.3625L7.225 0.6625C7.41667 0.470833 7.65217 0.375 7.9315 0.375C8.21083 0.375 8.44617 0.470833 8.6375 0.6625L9.3375 1.3625C9.52917 1.55417 9.62917 1.7855 9.6375 2.0565C9.64583 2.3275 9.55417 2.55867 9.3625 2.75L8.65 3.4625ZM7.925 4.2L2.625 9.5H0.5V7.375L5.8 2.075L7.925 4.2Z" />
+                                </svg> 
+                                <span class="last-modified-span"> </span>
+                            </div>
+                        </div>
+                        <!-- SINGLE INCIDENT MODALS -->
+                         <!-- EDIT SAVED -->
+                         <div class="hide modalbody" id="incidenteditsavemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Edit Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#incidenteditsavemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontlarge center">Edited Successfully</p>
+                                    <div class="btnscontainer-restricted ">
+                                        <button class="incidentbutton savebutton pointer" onclick="cancelModal('#incidenteditsavemodal')">OKAY</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- DELETE MODAL -->
+                        <div class="hide modalbody" id="incidentdeletemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Delete Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#incidentdeletemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontmedium center">Are you sure you want to delete the incident?</p>
+                                    <div class="btnscontainer">
+                                        <button class="incident-delete pointer suspectbtn" onclick="deleteIncident()">DELETE</button>
+                                        <button class="incident-cancel pointer" onclick="cancelModal('#incidentdeletemodal')">CANCEL</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- UNAUTHORISED MODAL -->
+                        <div class="hide modalbody" id="incidentdeletemodalrestricted">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Delete Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#incidentdeletemodalrestricted')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontmedium center">You are not authorised to delete the incident.</p>
+                                    <div class="btnscontainer-restricted ">
+                                        <button class="incident-cancel pointer" onclick="cancelModal('#incidentdeletemodalrestricted')">CANCEL</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD EVIDENCE TO INCIDENT -->
+                        <div class="hide modalbody evidencemodal">
+                            <section class="addevidencemodal">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Evidence to Incident </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.evidencemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="flexsmall choosevehiclecont">
+                                        <input type="text" name="incidentevidence" id="selectedincidentevidence" class="capitalize" placeholder="Choose Evidence Type" oninput="searchData('incidentevidence')">
+                                        <div class="incidentevidencedropdownicon addicon pointer" onclick="toggleEvidenceDropDown('incidentevidence')">
+                                            <svg xmlns="http://www.w3.org/2000/svg"  class=" pointer" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                            <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden incidentevidencesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="incidentevidencedropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="incident-evidence-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="incident-evidence-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addEvidenceToIncident()">SAVE</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD VEHICLE TO INCIDENT -->
+                        <div class="hide modalbody vehiclemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Vehicle</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.vehiclemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="incidentvehicle" id="selectedincidentvehicle" placeholder="Choose Vehicle" oninput="searchData('incidentvehicle')">
+                                        <div class="addicon pointer incidentvehicledropdownicon" onclick="toggleDropDown('incidentvehicle')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden incidentvehiclesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="incidentvehicledropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="incident-vehicle-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addVehicleToIncident()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD OFFICER TO INCIDENT -->
+                        <div class="hide modalbody officermodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Officer</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.officermodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="incidentofficer" id="selectedincidentofficer" placeholder="Choose profile" oninput="searchData('incidentofficer')">
+                                        <div class="addicon pointer incidentofficerdropdownicon" onclick="toggleDropDown('incidentofficer')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden incidentofficersearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="incidentofficerdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="incident-officer-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addOfficerToIncident()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD LEADING OFFICER TO INCIDENT -->
+                        <div class="hide modalbody leadingofficermodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Leading Officer</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.leadingofficermodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="incidentleadingofficer" id="selectedincidentleadingofficer" placeholder="Choose profile" oninput="searchData('incidentleadingofficer')">
+                                        <div class="addicon pointer incidentleadingofficerdropdownicon" onclick="toggleDropDown('incidentleadingofficer')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden incidentleadingofficersearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="incidentleadingofficerdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="incident-leadingofficer-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addLeadingOfficerToIncident()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD CITIZEN TO INCIDENT -->
+                        <div class="hide modalbody citizenmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Citizen</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.citizenmodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="incidentcitizen" id="selectedincidentcitizen" placeholder="Choose profile" oninput="searchData('incidentcitizen')">
+                                        <div class="addicon pointer incidentcitizendropdownicon" onclick="toggleDropDown('incidentcitizen')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden incidentcitizensearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="incidentcitizendropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="incidentcitizenstatus" id="selectedincidentcitizenstatus" placeholder="Choose person status" oninput="searchData('incidentcitizenstatus')">
+                                        <div class="addicon pointer incidentcitizenstatusdropdownicon" onclick="toggleStatusDropDown('incidentcitizenstatus')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden incidentcitizenstatussearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="incidentcitizenstatusdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="incident-citizen-status-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="incident-citizen-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addCitizenToIncident()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                    </section>
+
+                    <!-- PROFILES CONTENT -->
+                    <section class="profilescontent hidden">
+                        <div class="allprofilescontent">
+                            <div class="profiles-header">
+                                <section class="header-text">
+                                    <img src="images/profiles.svg" alt="warrants icon">
+                                    <div > 
+                                        <p class="bold">PROFILES <br> <span class="small">PROFILES</span></p>     
+                                    </div>
+                                </section>
+    
+                                <div class="profiles-header-filtering">
+                                    <section class="profiles-header-filters">
+                                        <p class="profiles-filter-all active-all">all</p>
+                                        <p class="profiles-filter-wanted">wanted</p>
+                                        <p class="profiles-filter-clean">clean</p>
+                                    </section>
+                                    <section class="search-input profiles-search-input">
+                                        <img src="images/search.svg" alt="search">
+                                        <input type="text" name="search" id="profilesearch" placeholder="Search">
+                                    </section>
+                                </div>
+                            </div>
+    
+                            <section class="profiles-main-container">                      
+                                <div class="profiles-main">
+    
+                                </div>
+                            </section>
+                        </div>
+                        <div class="profilecontent hidden">
+                            <div class="header">
+                                <section class="flexsmall">
+                                    <img src="images/profiles.svg" alt="warrants icon">
+                                    <div> 
+                                        <p class="bold"> <span class="profilename suspectname"></span> <br> <span class="small profileinfo"></span></p>     
+                                    </div>
+                                </section>
+                                
+                                <section class="flexsmall incidentbackbox pointer" onclick="viewAllProfiles()">
+                                    <img src="images/arrow-back.svg" class="smallsvg" alt="">
+                                    <p class="incidentback">Go back to profiles list</p>
+                                </section>
+                            </div>
+                            <div  class="profilemain">
+                                <section class="firstsection">
+                                    <div class="profilepic">
+                                        <img src="" alt="" id="profileimageurl">
+                                    </div>
+                                    <div class="profilenameswarrant">
+                                        <div class="profilenames">
+                                            <div> <span class="fontsmall grey mediumbold">NAME</span> <br> <span class="capitalize fontmedium profilefirstname"></span> </div>
+                                            <div> <span class="fontsmall grey mediumbold">SURNAME</span> <br> <span class="capitalize fontmedium profilesurname"></span> </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="fontsmall grey mediumbold">ACTIVE WARRANTS</h4>
+                                            <div class="fontsmall mediumbold totalwarrants">0 WARRANTS</div>
+                                        </div>
+                                    </div>
+                                    <div class="profilenameswarrant">
+                                        <div>
+                                            <span class="fontsmall grey mediumbold">DRIVERS LICENSE</span>
+                                            <div class="fontmedium mediumbold"> 2435hg23823sfhs89</div>
+                                        </div>
+                                        <div class="profilenames">
+                                            <div> <span class="fontsmall grey mediumbold">ID</span> <br> <span class="capitalize fontmedium profileid"></span> </div>
+                                            <div> <span class="fontsmall grey mediumbold">DOB</span> <br> <span class="capitalize fontmedium">23/04/1998</span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="profilebuttons">
+                                        <section class="flexsmall incidentbackbox pointer">
+                                            <img src="images/littlewarrant.svg" class="smallsvg" alt="">
+                                            <p class="incidentback grey">Any additional button</p>
+                                        </section>
+                                        <section class="flexsmall incidentbackbox redbox pointer"  onclick="showModal('#profilewarrantmodal')">
+                                            <img src="images/littlewarrantred.svg" class="smallsvg" alt="">
+                                            <p class="incidentback grey"> New warrant</p>
+                                        </section>
+                                    </div>
+                                </section>
+                                <section class="secondsection">
+                                    <div class="sub1 main-information">
+                                        <div class="main-info-header">  
+                                            <h4 class="fontmedium smallbold">Criminal history</h4> 
+                                            <p class=" fontsmaller totalprofilecrimehistory"></p>
+                                         </div>
+                                        <section class="subsub criminalhistory">
+                                            
+                                        </section>
+                                    </div>
+                                    <div class="sub1 main-information">
+                                        <div class="main-info-header">  
+                                            <h4 class="fontmedium smallbold">Vehicles</h4> 
+                                            <p class=" fontsmaller totalprofilevehicles"></p>
+                                         </div>
+                                        <section class="subsub profilevehicles"></section>
+                                    </div>
+                                    <div class="sub1 main-information">
+                                        <div class="main-info-header">  
+                                            <h4 class="fontmedium smallbold">Active warrants</h4>
+                                            <div class="flexsmall">
+                                                <p class=" fontsmaller suspectstyle totalprofilewarrantsactive"></p> 
+                                                <p class=" fontsmaller totalprofilewarrants"></p>
+                                            </div>
+                                         </div>
+                                        <section class="subsub profilewarrants">
+
+                                        </section>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="flexsmall profile-last-modified">
+                                
+                            </div>
+                        </div>
+                        <!-- NEW WARRANT MODAL -->
+                        <div class="hide modalbody" id="profilewarrantmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>New Warrant Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#profilewarrantmodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontmedium center">Are you sure you want to create new warrant?</p>
+                                    <div class="btnscontainer">
+                                        <button class="incident-delete pointer suspectbtn" onclick="addNewWarrant()">CONFIRM</button>
+                                        <button class="incident-cancel pointer" onclick="cancelModal('#profilewarrantmodal')">CANCEL</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                    </section>
+
+                    <!-- VEHICLES CONTENT -->
+                    <section class="vehiclescontent hidden">
+                        <div class="allvehiclescontent">
+                            <div class="profiles-header">
+                                <section class="header-text">
+                                    <img src="images/vehicle.svg" alt="warrants icon">
+                                    <div > 
+                                        <p class="bold">VEHICLES <br> <span class="small">VEHICLES</span></p>     
+                                    </div>
+                                </section>
+
+                                <div class="profiles-header-filtering">
+                                    <section class="profiles-header-filters">
+                                        <p class="vehicles-filter-all active-all">all</p>
+                                        <p class="vehicles-filter-wanted">wanted</p>
+                                        <p class="vehicles-filter-clean">clean</p>
+                                    </section>
+                                    <section class="search-input profiles-search-input">
+                                        <img src="images/search.svg" alt="search">
+                                        <input type="text" name="search" id="vehiclesearch" placeholder="Search">
+                                    </section>
+                                </div>
+                            </div>
+
+                            <section class="vehicles-main-container">                      
+                                <div class="vehicles-main">
+
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="vehiclecontent hidden">
+                            <div class="header">
+                                <section class="flexsmall">
+                                    <img src="images/vehicle.svg" alt="warrants icon">
+                                    <div> 
+                                        <p class="bold"> <span class="vehiclename suspectname"></span> <br> <span class="small vehicleinfo"></span></p>     
+                                    </div>
+                                </section>
+                                
+                                <section class="flexsmall incidentbackbox pointer" onclick="viewAllVehicles()">
+                                    <img src="images/arrow-back.svg" class="smallsvg" alt="">
+                                    <p class="incidentback">Go back to vehicles list</p>
+                                </section>
+                            </div>
+
+                            <div  class="profilemain">
+                                <section class="firstsection">
+                                    <div class="profilepic">
+                                        <img src="" alt="" id="vehicleimageurl">
+                                    </div>
+                                    <div class="profilenameswarrant">
+                                        <div class="profilenames">
+                                            <div> <span class="fontsmall grey mediumbold">NAME</span> <br> <span class="capitalize fontmedium vehname"></span> </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="fontsmall grey mediumbold">ACTIVE WARRANTS</h4>
+                                            <div class="fontsmall mediumbold totalfirstwarrants">0 WARRANTS</div>
+                                        </div>
+                                    </div>
+                                    <div class="profilebuttons">
+                                        <section class="flexsmall incidentbackbox pointer">
+                                            <img src="images/littlewarrant.svg" class="smallsvg" alt="">
+                                            <p class="incidentback grey">Any additional button</p>
+                                        </section>
+                                        <section class="flexsmall incidentbackbox redbox pointer" onclick="showModal('#vehiclewarrantmodal')">
+                                            <img src="images/littlewarrantred.svg" class="smallsvg" alt="">
+                                            <p class="incidentback grey"> New warrant</p>
+                                        </section>
+                                    </div>
+                                </section>
+                                <section class="secondsection">
+                                    <div class="sub1 main-information">
+                                        <div class="main-info-header">  
+                                            <h4 class="fontmedium smallbold">Criminal history</h4> 
+                                            <p class=" fontsmaller totalvehiclecriminalhistory"></p>
+                                         </div>
+                                        <section class="subsub vehiclecriminalhistory">
+                                            
+                                        </section>
+                                    </div>
+                                    <div class="sub1 main-information">
+                                        <div class="main-info-header">  
+                                            <h4 class="fontmedium smallbold">Active warrants</h4>
+                                            <div class="flexsmall">
+                                                <p class=" fontsmaller suspectstyle totalvehiclewarrantsactive"></p> 
+                                                <p class=" fontsmaller totalvehiclewarrants"></p>
+                                            </div>
+                                         </div>
+                                        <section class="subsub vehiclewarrants">
+
+                                        </section>
+                                    </div>
+                                    <div class="sub1 vehicleowner">
+                                        
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="flexsmall vehicle-last-modified">
+                                
+                            </div>
+                        </div>
+                        <!-- NEW WARRANT MODAL -->
+                        <div class="modalbody hide" id="vehiclewarrantmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>New Warrant Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#vehiclewarrantmodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontmedium center">Are you sure you want to create new warrant?</p>
+                                    <div class="btnscontainer">
+                                        <button class="incident-delete pointer suspectbtn" onclick="addNewVehicleWarrant()">CONFIRM</button>
+                                        <button class="incident-cancel pointer" onclick="cancelModal('#vehiclewarrantmodal')">CANCEL</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                    </section>
+
+                    <!-- REPORTS CONTENT -->
+                    <section class="reportscontent hidden ">
+                        <section class="reportscont">
+                        <div class="subsection">
+                            <div class="header">
+                                <section class="header-text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                        <path d="M7.00033 25.6673C6.35866 25.6673 5.80916 25.4387 5.35183 24.9813C4.89449 24.524 4.66622 23.9749 4.66699 23.334V4.66732C4.66699 4.02565 4.89566 3.47615 5.35299 3.01882C5.81033 2.56149 6.35944 2.33321 7.00033 2.33399H15.3712C15.6823 2.33399 15.979 2.39232 16.2613 2.50899C16.5437 2.62565 16.7914 2.79093 17.0045 3.00482L22.6628 8.66315C22.8767 8.87704 23.042 9.12515 23.1587 9.40749C23.2753 9.68982 23.3337 9.98615 23.3337 10.2965V12.9507L14.0003 22.2548V25.6673H7.00033ZM16.917 25.6673C16.7614 25.6673 16.6253 25.609 16.5087 25.4923C16.392 25.3757 16.3337 25.2395 16.3337 25.084V23.684C16.3337 23.5284 16.3679 23.3729 16.4363 23.2173C16.5048 23.0618 16.5872 22.9354 16.6837 22.8382L22.342 17.1507L24.8503 19.6007L19.1628 25.3173C19.0656 25.434 18.9392 25.5215 18.7837 25.5798C18.6281 25.6382 18.4725 25.6673 18.317 25.6673H16.917ZM25.6962 18.784L23.217 16.3048L24.0337 15.4882C24.267 15.2548 24.5489 15.1382 24.8795 15.1382C25.2101 15.1382 25.4823 15.2548 25.6962 15.4882L26.5128 16.334C26.7267 16.5673 26.8337 16.8446 26.8337 17.1658C26.8337 17.487 26.7267 17.7542 26.5128 17.9673L25.6962 18.784ZM16.3337 10.5007H21.0003L15.167 4.66732V9.33399C15.167 9.66454 15.279 9.94182 15.503 10.1658C15.727 10.3898 16.0039 10.5014 16.3337 10.5007Z" fill="white" fill-opacity="0.85"/>
+                                    </svg>
+                                    <div > 
+                                        <p class="bold">REPORTS <br> <span class="small">REPORTS</span></p>     
+                                    </div>
+                                </section>
+                                <div class="incidents-search-add">
+                                    <section class="search-input incidents-search-input">
+                                        <img src="images/search.svg" alt="search">
+                                        <input type="text" name="search" id="reportsearch" placeholder="Search">
+                                    </section>
+                                    <div class="addicon pointer reportadd" onclick="reportsAdd()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                            <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reports-main-container">
+                                <section class="reports-main reports-grid">
+                                   
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="subsection newreportscreen hidden">
+                            <div class="header">
+                                <section class="header-text">
+                                    <div class="paddedicon"><img src="images/Vectoraddincident.svg" alt="incident icon" ></div>
+                                    <div > 
+                                        <p class="bold">NEW REPORT <br> <span class="small">FILL ALL FIELD BELOW</span></p>     
+                                    </div>
+                                </section>
+                                <section class="flexicons">
+                                    <div class="flexsmall fontsmall savenewreport grey" onclick="saveNewReport()">
+                                        <svg width="16" class="smallsvg" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.25011 12.375H9.75011V15.875H6.25011V12.375Z" fill="white" fill-opacity="0.65"/>
+                                            <path d="M15.105 5.12125L10.8787 0.895C10.3869 0.402576 9.71971 0.125613 9.02375 0.125H6.25V5.375H10.625C10.8571 5.375 11.0796 5.46719 11.2437 5.63128C11.4078 5.79538 11.5 6.01794 11.5 6.25C11.5 6.48206 11.4078 6.70462 11.2437 6.86872C11.0796 7.03281 10.8571 7.125 10.625 7.125H5.375C5.14294 7.125 4.92038 7.03281 4.75628 6.86872C4.59219 6.70462 4.5 6.48206 4.5 6.25V0.125H2.75C2.05381 0.125 1.38613 0.401562 0.893845 0.893845C0.401562 1.38613 0.125 2.05381 0.125 2.75V13.25C0.125 13.9462 0.401562 14.6139 0.893845 15.1062C1.38613 15.5984 2.05381 15.875 2.75 15.875H4.5V12.375C4.5 11.9109 4.68437 11.4658 5.01256 11.1376C5.34075 10.8094 5.78587 10.625 6.25 10.625H9.75C10.2141 10.625 10.6592 10.8094 10.9874 11.1376C11.3156 11.4658 11.5 11.9109 11.5 12.375V15.875H13.25C13.9462 15.875 14.6139 15.5984 15.1062 15.1062C15.5984 14.6139 15.875 13.9462 15.875 13.25V6.97625C15.8744 6.28029 15.5974 5.61306 15.105 5.12125Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>
+                                        SAVE
+                                    </div>
+                                    <div class="paddedicon pointer" onclick="refreshReportForm()"><img src="images/anticlockwise.svg" alt="incident icon"></div>
+                                </section>
+                            </div>
+
+                            <div class="flexnewincident">
+                            <div class="newincident-main-container">
+                                <section class="newincident-main">
+                                    <div class="flexsmall choosevehiclecont">
+                                        <input type="text" name="reportname" id="selectedreport" class="capitalize" placeholder="Choose Report Type">
+                                        <div class="reportdropdownicon addicon pointer" onclick="toggleReportDropDown()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class=" pointer" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                            <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportsearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <div class="incidentinputbox inputone">
+                                        <img src="images/greyedit.svg" alt="edit" class="editabsolute">
+                                        <input type="text" name="title" id="newreporttitle" placeholder="Title" class="incidentinputtitle">
+                                    </div>
+                                    <div class="incidentinputbox inputtwo">
+                                        <img src="images/greyedit.svg" alt="edit" class="editabsolute">
+                                        <textarea name="" id="newreportdescription" cols="30" rows="10"  placeholder="Your Description" class="incidenttextarea"></textarea>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class='subsection addcriminalscreen'>
+                                <section class=" reports-last">
+                                    <div>
+                                        <section class='addcriminal reportevidenceheader header-text' > 
+                                            <div class="flexsmall">
+                                                <p>Evidence </p> 
+                                                <div class="addicon pointer plusreportevidence elementhidden" id="addreportevidence" >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer" id="evidencereporticon" onclick="evidenceReportSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="evidencereport subpicked hidevehicle">
+                                            <section class="additioncont" id="addedreportevidences">
+                                                
+                                            </section>
+                                            
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal reportofficerheader header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Officers Involved </p> 
+                                                <div class="addicon pointer plusreportofficer elementhidden" onclick="showModal('#reportofficermodal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer" id="officerreporticon" onclick="officerReportSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="officerreport subpicked hidevehicle">
+                                            <section class="additioncont" id="addedreportofficers">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal reportpersonheader header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Person Involved </p> 
+                                                <div class="addicon pointer plusreportperson elementhidden" id="addreportperson" >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer" id="personreporticon" onclick="personReportSub()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="personreport subpicked hidevehicle">
+                                            <section class="additioncont" id="addedreportpersons">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <div>
+                                        <section class='addcriminal reportvehicleheader header-text'> 
+                                            <div class="flexsmall">
+                                                <p>Vehicle Involved </p> 
+                                                <div class="addicon pointer plusreportvehicle elementhidden" onclick="addReportVehicle()">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="smallsvg" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8333 6.83171H6.83332V11.8317H5.16666V6.83171H0.166656V5.16504H5.16666V0.165039H6.83332V5.16504H11.8333V6.83171Z" class="addsvg"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="addicon pointer" id="addreportvehicle" onclick="addReportVehicles()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                    <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                                </svg>
+                                            </div>
+                                        </section>
+                                        <section class="vehiclesreport subpicked hidevehicle">
+                                            <section class="additioncont" id="addedreportvehicles">
+                                                
+                                            </section>
+                                        </section>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <!-- REPORTS MODALS -->
+                        <div class="modalbody hide" id="reportsevidence">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Evidence to Reports </p> 
+                                    <div class="cancelicon pointer" id="cancelreportsevidence"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="flexsmall choosevehiclecont">
+                                        <input type="text" class="capitalize" name="newreportevidencename" id="selectednewreportevidence" placeholder="Choose Evidence Type" oninput="searchData('newreportevidence')">
+                                        <div class="newreportevidencedropdownicon addicon pointer" onclick="toggleEvidenceDropDown('newreportevidence')">
+                                            <svg xmlns="http://www.w3.org/2000/svg"  class=" pointer" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                            <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden newreportevidencesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="newreportevidencedropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="reportevidence-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="newreportevidence-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" id="reportevidencesave">SAVE</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="modalbody hide" id="reportspersonmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Person </p> 
+                                    <div class="cancelicon pointer" id="cancelreportsperson"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="reportperson" id="selectedreportperson" placeholder="Choose profile" oninput="searchData('reportperson')">
+                                        <div class="addicon pointer reportpersondropdownicon" onclick="toggleDropDown('reportperson')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportpersonsearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportpersondropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="reportpersonstatus" id="selectedreportpersonstatus" placeholder="Choose person status" oninput="searchData('incidentcitizenstatus')">
+                                        <div class="addicon pointer reportpersonstatusdropdownicon" onclick="toggleStatusDropDown('reportpersonstatus')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportpersonstatussearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportpersonstatusdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="reportperson-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="reportperson-description" rows="4" placeholder="Description"></textarea>                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" id="reportspersonfind">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="hide modalbody" id="reportvehiclemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Vehicle </p> 
+                                    <div class="cancelicon pointer" onclick="cancelVehicleReport()"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="reportvehicle" id="selectedreportvehicle" placeholder="Choose Vehicle" oninput="searchData('reportvehicle')">
+                                        <div class="addicon pointer reportvehicledropdownicon dropdownicon" onclick="toggleDropDown('reportvehicle')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportvehiclesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportvehicledropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="reportvehicle-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="vehicleReportAdd()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <div class="hide modalbody" id="reportofficermodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Officer</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#reportofficermodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="reportofficer" id="selectedreportofficer" placeholder="Choose profile" oninput="searchData('reportofficer')">
+                                        <div class="addicon pointer reportofficerdropdownicon" onclick="toggleDropDown('reportofficer')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportofficersearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportofficerdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="reportofficer-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="officerReportAdd()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                    </section>
+                    <!-- VIEW SINGLE REPORT -->
+                    <div class="singlereport hidden">
+                        <div class="header">
+                            <section class="flexsmall">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                    <path d="M7.00033 25.6673C6.35866 25.6673 5.80916 25.4387 5.35183 24.9813C4.89449 24.524 4.66622 23.9749 4.66699 23.334V4.66732C4.66699 4.02565 4.89566 3.47615 5.35299 3.01882C5.81033 2.56149 6.35944 2.33321 7.00033 2.33399H15.3712C15.6823 2.33399 15.979 2.39232 16.2613 2.50899C16.5437 2.62565 16.7914 2.79093 17.0045 3.00482L22.6628 8.66315C22.8767 8.87704 23.042 9.12515 23.1587 9.40749C23.2753 9.68982 23.3337 9.98615 23.3337 10.2965V12.9507L14.0003 22.2548V25.6673H7.00033ZM16.917 25.6673C16.7614 25.6673 16.6253 25.609 16.5087 25.4923C16.392 25.3757 16.3337 25.2395 16.3337 25.084V23.684C16.3337 23.5284 16.3679 23.3729 16.4363 23.2173C16.5048 23.0618 16.5872 22.9354 16.6837 22.8382L22.342 17.1507L24.8503 19.6007L19.1628 25.3173C19.0656 25.434 18.9392 25.5215 18.7837 25.5798C18.6281 25.6382 18.4725 25.6673 18.317 25.6673H16.917ZM25.6962 18.784L23.217 16.3048L24.0337 15.4882C24.267 15.2548 24.5489 15.1382 24.8795 15.1382C25.2101 15.1382 25.4823 15.2548 25.6962 15.4882L26.5128 16.334C26.7267 16.5673 26.8337 16.8446 26.8337 17.1658C26.8337 17.487 26.7267 17.7542 26.5128 17.9673L25.6962 18.784ZM16.3337 10.5007H21.0003L15.167 4.66732V9.33399C15.167 9.66454 15.279 9.94182 15.503 10.1658C15.727 10.3898 16.0039 10.5014 16.3337 10.5007Z" fill="white" fill-opacity="0.85"/>
+                                </svg>                                
+                                <div> 
+                                    <p class="bold">Report #<span class="reportId"></span></p>  
+                                    <div class="information mb0">
+                                        <p class="small grey reportInfo"></p> <p class="dot"></p> <p class="small grey reportsubId"></p> 
+                                    </div>   
+                                </div>
+                            </section>
+                            <section class="flexsmall incidentbackbox pointer" onclick="viewAllReports()">
+                                <img src="images/arrow-back.svg" class="smallsvg" alt="">
+                                <p class="incidentback grey">Go back to reports list</p>
+                            </section>
+                        </div>
+                        <div class="reportdetailscont">
+                            <section class="first-detail">
+                                <div class="fontsmaller first-detail-sub">
+                                    <div class="red report-suspects inactive"> SUSPECTS <span></span></div>
+                                    <div class="blue report-victims inactive">VICTIMS <span></span></div>
+                                    <div class="green report-witnesses inactive">EYEWITNESSES <span></span></div>
+                                </div>
+                                <div class="first-detail-sub2">
+                                    <div class="report-citizens-box">
+
+                                    </div>
+                                    <div class="warrant">
+                                        <div class='addsuspect'  onclick="showModal('.reportcitizenmodal')">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M24.2188 6.25C24.8404 6.25 25.4365 6.49693 25.876 6.93647C26.3156 7.37601 26.5625 7.97215 26.5625 8.59375V21.875H39.8438C40.4654 21.875 41.0615 22.1219 41.501 22.5615C41.9406 23.001 42.1875 23.5971 42.1875 24.2188C42.1875 24.8404 41.9406 25.4365 41.501 25.876C41.0615 26.3156 40.4654 26.5625 39.8438 26.5625H26.5625V39.8438C26.5625 40.4654 26.3156 41.0615 25.876 41.501C25.4365 41.9406 24.8404 42.1875 24.2188 42.1875C23.5971 42.1875 23.001 41.9406 22.5615 41.501C22.1219 41.0615 21.875 40.4654 21.875 39.8438V26.5625H8.59375C7.97215 26.5625 7.37601 26.3156 6.93647 25.876C6.49693 25.4365 6.25 24.8404 6.25 24.2188C6.25 23.5971 6.49693 23.001 6.93647 22.5615C7.37601 22.1219 7.97215 21.875 8.59375 21.875H21.875V8.59375C21.875 7.97215 22.1219 7.37601 22.5615 6.93647C23.001 6.49693 23.5971 6.25 24.2188 6.25Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class='suspectname'>empty</p>
+                                            <div class="information">You can add person from list by click on plus near</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="second-detail">
+                                <div class="reportevidences">
+                                    <h4>Evidences</h4>
+                                    <p><span class="reportevidences-records"></span> records</p>
+                                    <svg viewBox="0 0 144 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M59.8 8.0625C59.8 2.50416 64.2938 -2 69.825 -2H135.975C141.506 -2 146 2.50416 146 8.0625V103.938C146 109.496 141.506 114 135.975 114H88.9086C89.1036 113.131 89.2 112.23 89.2 111.312V56.0605C93.51 54.2281 96.55 49.9365 96.55 44.9375V37.5625C96.55 30.906 91.1672 25.5 84.525 25.5H59.8V8.0625ZM131.929 77.7477C133.742 75.9285 133.742 72.9465 131.929 71.1273L117.229 56.3773C115.414 54.5563 112.436 54.5563 110.621 56.3773L95.9212 71.1273C94.1082 72.9465 94.1082 75.9285 95.9212 77.7477C97.7361 79.5687 100.714 79.5687 102.529 77.7477L109.25 71.0036V96.5625C109.25 99.1397 111.348 101.25 113.925 101.25C116.502 101.25 118.6 99.1397 118.6 96.5625V71.0036L125.321 77.7477C127.136 79.5687 130.114 79.5687 131.929 77.7477ZM1 37.5625C1 36.0835 2.20923 34.875 3.675 34.875H84.525C85.9908 34.875 87.2 36.0835 87.2 37.5625V44.9375C87.2 46.4165 85.9908 47.625 84.525 47.625H3.675C2.20923 47.625 1 46.4165 1 44.9375V37.5625ZM79.85 57V107.625C79.85 111.155 77.01 114 73.5 114H14.7C11.19 114 8.35 111.155 8.35 107.625V57H79.85ZM33.075 69.75C30.4983 69.75 28.4 71.8603 28.4 74.4375C28.4 77.0147 30.4983 79.125 33.075 79.125H55.125C57.7017 79.125 59.8 77.0147 59.8 74.4375C59.8 71.8603 57.7017 69.75 55.125 69.75H33.075Z"/>
+                                    </svg>
+                                </div>
+                                <div class="reportvehicles">
+                                    <h4>Vehicles</h4>
+                                    <p><span class="reportvehicles-records"></span> records</p>
+                                    <svg viewBox="0 0 128 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M106.75 -21.958C87.315 -21.958 71.5417 -6.18467 71.5417 13.2503C71.5417 32.6853 87.315 48.4587 106.75 48.4587C126.185 48.4587 141.958 32.6853 141.958 13.2503C141.958 -6.18467 126.185 -21.958 106.75 -21.958ZM110.271 20.292H103.229V-7.87467H110.271V20.292ZM110.271 27.3337V34.3753H103.229V27.3337H110.271ZM106.116 62.542C106.539 63.6687 106.75 64.8657 106.75 66.0628C106.75 71.9074 102.032 76.6253 96.1875 76.6253C90.3429 76.6253 85.625 71.9074 85.625 66.0628C85.625 63.3166 86.6813 60.852 88.3713 58.9507C76.898 54.3114 67.5778 45.544 62.2467 34.3753H20.9121L28.2354 13.2503H57.4583C57.4583 8.39158 58.1625 3.60324 59.5004 -0.833007H18.0954L1.125 48.4587V111.834H22.25V97.7503H106.75V111.834H127.875V57.7537C120.481 61.3449 112.665 62.6124 106.116 62.542ZM32.8125 76.6253C26.9679 76.6253 22.25 71.9074 22.25 66.0628C22.25 60.2182 26.9679 55.5003 32.8125 55.5003C38.6571 55.5003 43.375 60.2182 43.375 66.0628C43.375 71.9074 38.6571 76.6253 32.8125 76.6253Z"/>
+                                    </svg>
+                                </div>
+                                <div class="reportofficers">
+                                    <h4>Officers</h4>
+                                    <p><span class="reportofficers-records"></span> records</p>
+                                    <svg viewBox="0 0 141 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M80.5166 113.864L79.9999 113.552L79.4832 113.864L32.5872 142.169L45.0321 88.8227L45.1692 88.2349L44.713 87.8397L3.27942 51.9457L57.8386 47.3169L58.4395 47.266L58.6748 46.7107L79.9999 -3.6044L101.325 46.7107L101.56 47.266L102.161 47.3169L156.72 51.9457L115.287 87.8397L114.831 88.2349L114.968 88.8227L127.413 142.169L80.5166 113.864Z"/>
+                                    </svg>
+                                </div>
+                                <div class="reportcitizens">
+                                    <h4>Citizens</h4>
+                                    <p><span class="reportcitizens-records"></span> records</p>
+                                    <svg viewBox="0 0 144 111" fill="none" class="second-detail-svg" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M84.3125 34.0781C84.3125 48.6705 72.483 60.5 57.8906 60.5C43.2982 60.5 31.4688 48.6705 31.4688 34.0781C31.4688 19.4857 43.2982 7.65625 57.8906 7.65625C72.483 7.65625 84.3125 19.4857 84.3125 34.0781Z"/>
+                                        <path d="M57.8906 70.1172C65.9423 70.1172 76.8047 72.0258 86.8905 76.758C80.2935 80.2696 74.8499 84.4833 70.8512 89.0226C65.3864 95.2213 62.2227 102.704 62.2227 110.223V115.344H7.09375V100.348C7.09375 90.5577 15.2986 83.0002 26.0585 77.827C36.7529 72.6853 49.5543 70.1172 57.8906 70.1172Z" />
+                                        <path d="M71.0781 110.25C71.0781 98.6979 80.4947 89.8105 92.7906 83.7479C105.03 77.7132 119.732 74.6875 129.492 74.6875C139.252 74.6875 153.954 77.7132 166.194 83.7479C178.49 89.8105 187.906 98.6979 187.906 110.25V127.531H71.0781V110.25Z"/>
+                                        <path d="M162.008 27.9844C162.008 45.9423 147.45 60.5 129.492 60.5C111.534 60.5 96.9766 45.9423 96.9766 27.9844C96.9766 10.0265 111.534 -4.53125 129.492 -4.53125C147.45 -4.53125 162.008 10.0265 162.008 27.9844Z" />
+                                    </svg>
+                                </div>
+                            </section>
+                            <section class="third-detail">
+                                <div class="main-information">
+                                    <div class="main-info-header">  
+                                       <h4 class="report-main-title">Main Information</h4> 
+                                       <p class="pointer backtomaininforeport elementhidden" onclick="backToMainInfoReport()">Back to main info</p>
+                                    </div>
+                                    <article class="report-main-info">
+                                        <div class="report-main-info-title-cont">
+                                            <input id="report-main-info-title" class="report-main-info-title" name="report-main-info-title" type="text" placeholder="Title">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" onclick="saveReportTitleEdit()">
+                                                <path class="smalledit" d="M8.65 3.4625L6.525 1.3625L7.225 0.6625C7.41667 0.470833 7.65217 0.375 7.9315 0.375C8.21083 0.375 8.44617 0.470833 8.6375 0.6625L9.3375 1.3625C9.52917 1.55417 9.62917 1.7855 9.6375 2.0565C9.64583 2.3275 9.55417 2.55867 9.3625 2.75L8.65 3.4625ZM7.925 4.2L2.625 9.5H0.5V7.375L5.8 2.075L7.925 4.2Z" />
+                                            </svg>
+                                        </div>
+                                        <div class="report-main-info-text-cont fontsmall">
+                                            <input id="report-main-info-text" class="report-main-info-text" name="report-main-info-text" type="text" placeholder="Information">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" onclick="saveReportInfoEdit()">
+                                                <path class="smalledit" d="M8.65 3.4625L6.525 1.3625L7.225 0.6625C7.41667 0.470833 7.65217 0.375 7.9315 0.375C8.21083 0.375 8.44617 0.470833 8.6375 0.6625L9.3375 1.3625C9.52917 1.55417 9.62917 1.7855 9.6375 2.0565C9.64583 2.3275 9.55417 2.55867 9.3625 2.75L8.65 3.4625ZM7.925 4.2L2.625 9.5H0.5V7.375L5.8 2.075L7.925 4.2Z" />
+                                            </svg>
+                                        </div>
+                                    </article>
+                                    <article class="report-detail-records hidden">
+                                        <div class="report-details">
+    
+                                        </div>
+                                        <div class="flexsmall grey pointer addnew">
+                                            <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M24.2188 6.25C24.8404 6.25 25.4365 6.49693 25.876 6.93647C26.3156 7.37601 26.5625 7.97215 26.5625 8.59375V21.875H39.8438C40.4654 21.875 41.0615 22.1219 41.501 22.5615C41.9406 23.001 42.1875 23.5971 42.1875 24.2188C42.1875 24.8404 41.9406 25.4365 41.501 25.876C41.0615 26.3156 40.4654 26.5625 39.8438 26.5625H26.5625V39.8438C26.5625 40.4654 26.3156 41.0615 25.876 41.501C25.4365 41.9406 24.8404 42.1875 24.2188 42.1875C23.5971 42.1875 23.001 41.9406 22.5615 41.501C22.1219 41.0615 21.875 40.4654 21.875 39.8438V26.5625H8.59375C7.97215 26.5625 7.37601 26.3156 6.93647 25.876C6.49693 25.4365 6.25 24.8404 6.25 24.2188C6.25 23.5971 6.49693 23.001 6.93647 22.5615C7.37601 22.1219 7.97215 21.875 8.59375 21.875H21.875V8.59375C21.875 7.97215 22.1219 7.37601 22.5615 6.93647C23.001 6.49693 23.5971 6.25 24.2188 6.25Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>
+                                            Add new
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="flexsmall">
+                            <div class="incident-trash pointer" onclick="checkAccess('#reportdeletemodal')">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.8334 3.33333H12.9167L12.0834 2.5H7.91675L7.08341 3.33333H4.16675V5H15.8334M5.00008 15.8333C5.00008 16.2754 5.17568 16.6993 5.48824 17.0118C5.8008 17.3244 6.22472 17.5 6.66675 17.5H13.3334C13.7754 17.5 14.1994 17.3244 14.5119 17.0118C14.8245 16.6993 15.0001 16.2754 15.0001 15.8333V5.83333H5.00008V15.8333Z" fill="#F13333" fill-opacity="0.65"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flexsmall last-modified">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                <path class="smalledit" d="M8.65 3.4625L6.525 1.3625L7.225 0.6625C7.41667 0.470833 7.65217 0.375 7.9315 0.375C8.21083 0.375 8.44617 0.470833 8.6375 0.6625L9.3375 1.3625C9.52917 1.55417 9.62917 1.7855 9.6375 2.0565C9.64583 2.3275 9.55417 2.55867 9.3625 2.75L8.65 3.4625ZM7.925 4.2L2.625 9.5H0.5V7.375L5.8 2.075L7.925 4.2Z" />
+                            </svg> 
+                            <span class="reportlast-modified-span"> </span>
+                        </div>
+                    </div>
+                     <!-- SINGLE REPORT MODALS -->
+                        <!-- EDIT SAVED -->
+                        <div class="hide modalbody" id="reporteditsavemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Edit Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#reporteditsavemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontlarge center">Edited Successfully</p>
+                                    <div class="btnscontainer-restricted ">
+                                        <button class="incidentbutton savebutton pointer" onclick="cancelModal('#reporteditsavemodal')">OKAY</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- DELETE MODAL -->
+                        <div class="hide modalbody" id="reportdeletemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Delete Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#reportdeletemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontmedium center">Are you sure you want to delete the report?</p>
+                                    <div class="btnscontainer">
+                                        <button class="incident-delete pointer suspectbtn" onclick="deleteReport()">DELETE</button>
+                                        <button class="incident-cancel pointer" onclick="cancelModal('#reportdeletemodal')">CANCEL</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- UNAUTHORISED MODAL -->
+                        <div class="hide modalbody" id="reportdeletemodalrestricted">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Delete Confirmation </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('#reportdeletemodalrestricted')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <p class="fontmedium center">You are not authorised to delete the report.</p>
+                                    <div class="btnscontainer-restricted ">
+                                        <button class="incident-cancel pointer" onclick="cancelModal('#reportdeletemodalrestricted')">CANCEL</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                         <!-- ADD EVIDENCE TO SINGLE REPORT -->
+                         <div class="hide modalbody reportevidencemodal">
+                            <section class="addevidencemodal">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Evidence to Report </p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.reportevidencemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="flexsmall choosevehiclecont">
+                                        <input type="text" name="reportevidence" id="selectedreportevidence" class="capitalize" placeholder="Choose Evidence Type" oninput="searchData('reportevidence')">
+                                        <div class="reportevidencedropdownicon addicon pointer" onclick="toggleEvidenceDropDown('reportevidence')">
+                                            <svg xmlns="http://www.w3.org/2000/svg"  class=" pointer" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                            <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportevidencesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportevidencedropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="report-evidence-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="report-evidence-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addEvidenceToReport()">SAVE</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD VEHICLE TO SINGLE REPORT -->
+                        <div class="hide modalbody reportvehiclemodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Vehicle</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.reportvehiclemodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="singlereportvehicle" id="selectedsinglereportvehicle" placeholder="Choose Vehicle" oninput="searchData('singlereportvehicle')">
+                                        <div class="addicon pointer singlereportvehicledropdownicon dropdownicon" onclick="toggleDropDown('singlereportvehicle')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden singlereportvehiclesearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="singlereportvehicledropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="singlereport-vehicle-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addVehicleToReport()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD OFFICER TO SINGLE REPORT -->
+                        <div class="hide modalbody reportofficermodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Officer</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.reportofficermodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="singlereportofficer" id="selectedsinglereportofficer" placeholder="Choose profile" oninput="searchData('singlereportofficer')">
+                                        <div class="addicon pointer singlereportofficerdropdownicon" onclick="toggleDropDown('singlereportofficer')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden singlereportofficersearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="singlereportofficerdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="singlereport-officer-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addOfficerToReport()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD LEADING OFFICER TO SINGLE REPORT -->
+                        <div class="hide modalbody reportleadingofficermodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Leading Officer</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.reportleadingofficermodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="singlereportleadingofficer" id="selectedsinglereportleadingofficer" placeholder="Choose profile" oninput="searchData('singlereportleadingofficer')">
+                                        <div class="addicon pointer singlereportleadingofficerdropdownicon" onclick="toggleDropDown('singlereportleadingofficer')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden singlereportleadingofficersearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="singlereportleadingofficerdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <textarea name="description" id="singlereport-leadingofficer-description" rows="8" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addLeadingOfficerToReport()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                        <!-- ADD CITIZEN TO SINGLE REPORT -->
+                        <div class="hide modalbody reportcitizenmodal">
+                            <section class="addevidencemodal ">
+                                <img src="images/evidencevectorup.svg" alt="vector up" class="vectorup">
+                                <img src="images/evidencevectordown.svg" alt="vector down" class="vectordown">
+                                <section class='header'> 
+                                    <p>Add Citizen</p> 
+                                    <div class="cancelicon pointer" onclick="cancelModal('.reportcitizenmodal')"><img src="images/greyclose.svg" alt="cancel icon" ></div>
+                                </section>
+                                <section class="content">
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="reportcitizen" id="selectedreportcitizen" placeholder="Choose profile" oninput="searchData('reportcitizen')">
+                                        <div class="addicon pointer reportcitizendropdownicon" onclick="toggleDropDown('reportcitizen')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportcitizensearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportcitizendropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <div class="choosevehiclecont flexsmall">
+                                        <input type="text" name="reportcitizenstatus" id="selectedreportcitizenstatus" placeholder="Choose person status" oninput="searchData('reportcitizenstatus')">
+                                        <div class="addicon pointer reportcitizenstatusdropdownicon" onclick="toggleStatusDropDown('reportcitizenstatus')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                <path d="M8.75 12.5L15 18.75L21.25 12.5H8.75Z" fill="white" fill-opacity="0.45"/>
+                                            </svg>
+                                        </div>
+                                        <div class="elementhidden reportcitizenstatussearchpop searchpop"> 
+                                            <svg width="18" height="18" class="smallsvg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.9667 17.25L10.1917 11.475C9.73333 11.8417 9.20625 12.1319 8.61042 12.3458C8.01458 12.5597 7.38056 12.6667 6.70833 12.6667C5.04306 12.6667 3.63383 12.0901 2.48067 10.9369C1.32689 9.78314 0.75 8.37361 0.75 6.70833C0.75 5.04306 1.32689 3.63353 2.48067 2.47975C3.63383 1.32658 5.04306 0.75 6.70833 0.75C8.37361 0.75 9.78314 1.32658 10.9369 2.47975C12.0901 3.63353 12.6667 5.04306 12.6667 6.70833C12.6667 7.38056 12.5597 8.01458 12.3458 8.61042C12.1319 9.20625 11.8417 9.73333 11.475 10.1917L17.25 15.9667L15.9667 17.25ZM6.70833 10.8333C7.85417 10.8333 8.82828 10.4324 9.63067 9.63067C10.4324 8.82828 10.8333 7.85417 10.8333 6.70833C10.8333 5.5625 10.4324 4.58839 9.63067 3.786C8.82828 2.98422 7.85417 2.58333 6.70833 2.58333C5.5625 2.58333 4.58839 2.98422 3.786 3.786C2.98422 4.58839 2.58333 5.5625 2.58333 6.70833C2.58333 7.85417 2.98422 8.82828 3.786 9.63067C4.58839 10.4324 5.5625 10.8333 6.70833 10.8333Z" fill="white" fill-opacity="0.65"/>
+                                            </svg>                                        
+                                        </div>
+                                        <div class="reportcitizenstatusdropdowncontent dropdowncontent hidden"></div>
+                                    </div>
+                                    <input type="text" name="imageURL" id="report-citizen-status-imageURL" placeholder="Image URL">
+                                    <textarea name="description" id="report-citizen-description" rows="4" placeholder="Description"></textarea>
+                                    <div class="center">
+                                        <button class="pointer incidentbutton savebutton" onclick="addCitizenToReport()">ADD</button>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                </section>
+
+                    <!-- MISC CONTENT -->
+                    <section class="misccontent hidden ">
+                        <div class="header">
+                            <section class="header-text">
+                                <img src="images/miscsettings.svg" alt="warrants icon">
+                                <div > 
+                                    <p class="bold">MISC <br> <span class="small">ADDITIONAL SETTINGS</span></p>     
+                                </div>
+                            </section>
+                        </div>
+                    
+                        <div class="misc-main">
+                            <section class="settingboxone settingbox">
+                                <div class="settingheader">
+                                    <div class="linedot">
+                                        <div class="smalldot"></div>
+                                        <div class="longline"></div>
+                                    </div>
+                                    <p class="grey bold">MAIN SETTINGS</p>
+                                </div>
+                                <section class="mainsettings">
+                                    <div class="setting">
+                                        <p class="settingtitle">MIN Racers</p>
+                                        <section class="flexvalue">
+                                            <div class="changeicon pointer" id="decreaseMIN">
+                                                <img src="images/left.svg" alt="arrow-left">
+                                            </div>
+                                            <p id="MINvalue"></p>
+                                            <div class="changeicon pointer" id="increaseMIN">
+                                                <img src="images/right.svg" alt="arrow-right">
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">MAX Racers</p>
+                                        <section class="flexvalue">
+                                            <div class="changeicon pointer" id="decreaseMAX">
+                                                <img src="images/left.svg" alt="arrow-left">
+                                            </div>
+                                            <p id="MAXvalue">5</p>
+                                            <div class="changeicon pointer" id="increaseMAX">
+                                                <img src="images/right.svg" alt="arrow-right">
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">Racers Collisions</p>
+                                        <section class="flexvalue">
+                                            <button class="greenbutton pointer toggleOnOff">ON</button>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">Laps</p>
+                                        <section class="flexvalue">
+                                            <div class="changeicon pointer" id="decreaseLaps">
+                                                <img src="images/left.svg" alt="arrow-left">
+                                            </div>
+                                            <p id="lapsvalue">5</p>
+                                            <div class="changeicon pointer" id="increaseLaps">
+                                                <img src="images/right.svg" alt="arrow-right">
+                                            </div>
+                                        </section>
+                                    </div>
+                                </section>
+
+                                <div class="settingheader">
+                                    <div class="linedot">
+                                        <div class="smalldot"></div>
+                                        <div class="longline"></div>
+                                    </div>
+                                    <p class="grey bold">MAIN SETTINGS</p>
+                                </div>
+                                <section class="mainsettings">
+                                    <div class="setting">
+                                        <p class="settingtitle">Racers Collisions</p>
+                                        <section class="flexvalue">
+                                            <button class="redbutton pointer toggleOnOff">OFF</button>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">Racers Collisions</p>
+                                        <section class="flexvalue">
+                                            <button class="redbutton pointer toggleOnOff">OFF</button>
+                                        </section>
+                                    </div>
+                                </section>
+                            </section>
+
+                            <section class="settingboxtwo settingbox">
+                                <div class="settingheader">
+                                    <div class="smalldot"></div>
+                                    <div class="longline"></div>
+                                    <p class="grey bold">MAIN SETTINGS</p>
+                                </div>
+                                <section class="mainsettings">
+                                    <div class="setting">
+                                        <p class="settingtitle">Racers Collisions</p>
+                                        <section class="flexvalue">
+                                            <button class="redbutton pointer toggleOnOff">OFF</button>
+                                        </section>
+                                    </div>
+                                </section>
+
+                                <div class="settingheader">
+                                    <div class="smalldot"></div>
+                                    <div class="longline"></div>
+                                    <p class="grey bold">MAIN SETTINGS</p>
+                                </div>
+
+                                <section class="mainsettings">
+                                    <div class="setting">
+                                        <p class="settingtitle">MIN Racers</p>
+                                        <section class="flexvalue">
+                                            <div class="changeicon pointer" id="decreaseMINtwo">
+                                                <img src="images/left.svg" alt="arrow-left">
+                                            </div>
+                                            <p id="MINvaluetwo">5</p>
+                                            <div class="changeicon pointer" id="increaseMINtwo">
+                                                <img src="images/right.svg" alt="arrow-right">
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">MAX Racers</p>
+                                        <section class="flexvalue">
+                                            <div class="changeicon pointer" id="decreaseMAXtwo">
+                                                <img src="images/left.svg" alt="arrow-left">
+                                            </div>
+                                            <p id="MAXvaluetwo">5</p>
+                                            <div class="changeicon pointer" id="increaseMAXtwo">
+                                                <img src="images/right.svg" alt="arrow-right">
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">Racers Collisions</p>
+                                        <section class="flexvalue">
+                                            <button class="greenbutton pointer toggleOnOff">ON</button>
+                                        </section>
+                                    </div>
+
+                                    <div class="setting">
+                                        <p class="settingtitle">Laps</p>
+                                        <section class="flexvalue">
+                                            <div class="changeicon pointer" id="decreaseLapstwo">
+                                                <img src="images/left.svg" alt="arrow-left">
+                                            </div>
+                                            <p id="lapsvaluetwo">5</p>
+                                            <div class="changeicon pointer" id="increaseLapstwo">
+                                                <img src="images/right.svg" alt="arrow-right">
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="setting">
+                                        <p class="settingtitle">Racers Collisions</p>
+                                        <section class="flexvalue">
+                                            <button class="redbutton pointer toggleOnOff">OFF</button>
+                                        </section>
+                                    </div>
+                                </section>
+                            </section>
+
+                            <section class="settingboxthree settingbox">
+                                <div class="right"><button class="pointer miscsave" id="reportspersonfind">SAVE</button></div>
+                            </section>
+                        </div>
+                    </section>
+                </main>
+
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+<html>
